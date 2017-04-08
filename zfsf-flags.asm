@@ -21,7 +21,6 @@ main PROC
     add     al, specifiedValue
     call    DumpRegs    ; SF = 1
 
-    xor     eax, eax
     invoke  ExitProcess, 0 
 main ENDP
 

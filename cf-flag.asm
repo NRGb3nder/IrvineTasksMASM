@@ -22,7 +22,6 @@ main PROC
 	add     al, 1 
 	call    DumpRegs    ; CF = 1
 
-	xor	eax, eax
 	invoke  ExitProcess, 0 
 main ENDP
 

@@ -11,18 +11,18 @@ DumpRegs PROTO
 .code
 
 main PROC
-    mov     eax, 0
+    xor	    eax, eax
     call    DumpRegs    ; ZF = 1
     inc     al
     call    DumpRegs    ; ZF = 0
 
-    mov     al, 0
+    xor	    al, al
     call    DumpRegs    ; SF = 0
     add     al, specifiedValue
     call    DumpRegs    ; SF = 1
 
-	mov     eax, 0
-	invoke  ExitProcess, 0 
+    xor     eax, eax
+    invoke  ExitProcess, 0 
 main ENDP
 
 END main

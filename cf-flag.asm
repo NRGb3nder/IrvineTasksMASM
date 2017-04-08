@@ -11,7 +11,7 @@ DumpRegs PROTO
 .code
 
 main PROC
-	mov     eax, 0
+	xor	eax, eax
 	call    DumpRegs    ; CF = 0
 	sub     al, 1
 	call    DumpRegs    ; CF = 1
@@ -22,7 +22,7 @@ main PROC
 	add     al, 1 
 	call    DumpRegs    ; CF = 1
 
-	mov     eax, 0
+	xor	eax, eax
 	invoke  ExitProcess, 0 
 main ENDP
 

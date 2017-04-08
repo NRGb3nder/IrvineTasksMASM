@@ -6,7 +6,7 @@ ExitProcess PROTO :DWORD
 DumpRegs PROTO
 
 .data
-    specifiedValue      BYTE    11111111b
+    	specifiedValue      BYTE    11111111b
 
 .code
 

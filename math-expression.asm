@@ -6,7 +6,7 @@ ExitProcess PROTO :DWORD
 DumpRegs PROTO
 
 .data
-	val1    SDWORD      8
+    val1    SDWORD      8
     val2    SDWORD      -15
     val3    SDWORD      20    
 
@@ -23,8 +23,8 @@ main PROC
         sub     eax, val3   ; eax = 0Ah
         call    DumpRegs
 
-	    xor     eax, eax
- 	    invoke  ExitProcess, 0 
+	xor     eax, eax
+ 	invoke  ExitProcess, 0 
 main ENDP
 
 END main

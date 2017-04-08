@@ -13,20 +13,20 @@ DumpRegs PROTO
 .code
 
 main PROC
-    mov     eax, 0
+    xor     eax, eax
     mov     al, firstValue
     call    DumpRegs    ; OF = 0, CF = 0
     add     al, firstValue
     call    DumpRegs    ; OF = 1, CF = 0
     
-    mov     eax, 0
+    xor     eax, eax
     mov     al, secondValue
     add     al, 0
     call    DumpRegs    ; OF = 0, CF = 0
     add     al, thirdValue
     call    DumpRegs    ; OF = 1, CF = 1 
 
-    mov     eax, 0
+    xor     eax, eax
     invoke  ExitProcess, 0 
 main ENDP
 

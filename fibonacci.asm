@@ -6,7 +6,7 @@ ExitProcess PROTO :DWORD
 DumpRegs PROTO
 
 .data
-	fibonacciArray      BYTE    1, 1, 5 DUP (?)
+        fibonacciArray      BYTE    1, 1, 5 DUP (?)
 
 .code
 
@@ -33,8 +33,8 @@ NewNum:
         ; eax: 1 -> 1 -> 2 -> 3 -> 5 -> 8 -> 13 
         ; fibonacciArray: 1, 1, 2, 3, 5, 8, 13
 
-	    xor     eax, eax
- 	    invoke  ExitProcess, 0 
+	xor     eax, eax
+ 	invoke  ExitProcess, 0 
 main ENDP
 
 END main

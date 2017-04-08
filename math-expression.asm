@@ -6,9 +6,9 @@ ExitProcess PROTO :DWORD
 DumpRegs PROTO
 
 .data
-    val1    SDWORD      8
-    val2    SDWORD      -15
-    val3    SDWORD      20    
+    	val1    SDWORD      8
+    	val2    SDWORD      -15
+    	val3    SDWORD      20    
 
 .code
 

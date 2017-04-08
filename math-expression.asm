@@ -23,7 +23,6 @@ main PROC
         sub     eax, val3   ; eax = 0Ah
         call    DumpRegs
 
-	xor     eax, eax
  	invoke  ExitProcess, 0 
 main ENDP
 

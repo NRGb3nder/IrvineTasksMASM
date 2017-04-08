@@ -26,7 +26,6 @@ main PROC
     add     al, thirdValue
     call    DumpRegs    ; OF = 1, CF = 1 
 
-    xor     eax, eax
     invoke  ExitProcess, 0 
 main ENDP
 

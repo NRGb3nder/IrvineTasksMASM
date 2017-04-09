@@ -26,7 +26,7 @@ PopChar:
         mov     edx, OFFSET specifiedString
         call    WriteString
         call    CrLf
- 	    invoke  ExitProcess, 0 
+        invoke  ExitProcess, 0 
 main ENDP
 
 END main

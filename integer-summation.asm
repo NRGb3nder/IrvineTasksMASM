@@ -54,7 +54,7 @@ ArraySum ENDP
 
 DisplaySum PROC USES edx
 ; RECIEVES: eax: sum of array elements
-; RETURNS: -
+; RETURNS:  -
         mov     edx, OFFSET prompt2
         call    WriteString
         call    WriteInt

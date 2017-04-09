@@ -45,7 +45,7 @@ NewRandomChar PROC
 NewRandomChar ENDP
 
 OutputString PROC
-; REVIECES: esi: string offset
+; RECIEVES: esi: string offset
 ; RETURNS:  -
         pushad
         mov     ecx, stringLength

@@ -28,8 +28,8 @@ main ENDP
 
 GetTwoIntegers PROC USES edx
 ; RECIEVES: -
-; RETURNS: eax: second integer value
-;          ebx: first integer value
+; RETURNS:  eax: second integer value
+;           ebx: first integer value
         call    ClrScr
 
         mov     edx, OFFSET msgFirstInt
@@ -63,4 +63,3 @@ OutputTwoIntegersSum PROC USES eax
 OutputTwoIntegersSum ENDP 
 
 END main
-

@@ -85,7 +85,7 @@ main ENDP
 
 CheckInput PROC USES edx eflags
         call    IsDigit
-        jnz     Error
+        jz      Error
         cmp     eax, SCORE_MAX_LIMIT
         jb      Pass
 Error:

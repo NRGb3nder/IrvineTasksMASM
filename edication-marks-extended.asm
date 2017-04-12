@@ -32,7 +32,6 @@ INCLUDE Irvine32.inc
 
 main PROC
 Search:
-        inc     queryCounter
         call    ClrScr
         mov     edx, OFFSET msgPrompt
         call    WriteString
@@ -41,6 +40,7 @@ Search:
         call    ReadInt
         call    CheckInput
 
+        inc     queryCounter
         mov     ebx, OFFSET MarkTable
         mov     ecx, MARKS_QUANTITY
 
@@ -69,14 +69,14 @@ RepeatSearch:
         cmp     al, ' '
         je      Search
 
-QuitReport:
+QuitReport::
         call    CrLf
         mov     edx, OFFSET msgQueries
         call    WriteString
         xor     eax, eax
         mov     al, queryCounter
         call    WriteInt
-Quit::
+        
         call    CrLf
         call    WaitMsg
 
@@ -84,14 +84,12 @@ Quit::
 main ENDP
 
 CheckInput PROC USES edx eflags
-        call    IsDigit
-        jz      Error
-        cmp     eax, SCORE_MAX_LIMIT
-        jb      Pass
-Error:
+        cmp     al, SCORE_MAX_LIMIT
+        jbe     Pass
         mov     edx, OFFSET msgError
         call    WriteString
-        jmp     Quit
+        call    CrLf
+        jmp     QuitReport
 
 Pass:
         ret

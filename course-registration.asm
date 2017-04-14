@@ -18,7 +18,7 @@ INCLUDE Irvine32.inc
         msgCredits      BYTE    "Input exam grade student counts on", 0
         msgPass         BYTE    "Student can be registered", 0
         msgFail         BYTE    "Student can NOT be registered", 0
-        msgRepeat       BYTE    "Press SPACE to check another student, another key to exit", 0
+        msgRepeat       BYTE    "Press SPACE to check again, another key to exit", 0
 
 .code
 

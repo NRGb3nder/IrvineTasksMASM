@@ -8,18 +8,20 @@ INCLUDE Irvine32.inc
 .code
 
 Testing PROC
-        mov     esi, OFFSET firstOperand
-        mov     edi, OFFSET secondOperand
-        mov     ebx, OFFSET sum
+        mov     esi, OFFSET firstOperand + SIZEOF firstOperand - TYPE firstOperand
+        mov     edi, OFFSET secondOperand + SIZEOF secondOperand - TYPE secondOperand
+        mov     ebx, OFFSET sum + SIZEOF sum - TYPE sum
         mov     ecx, 8
         call    ExtendedAdd
 
-        add     ebx, 32
         mov     ecx, 9
+        mov     ebx, OFFSET sum
 Output:
         mov     eax, [ebx]
         call    WriteHex
-        sub     ebx, 4
+        mov     eax, ' '
+        call    WriteChar
+        add     ebx, TYPE sum
         loop    Output
 
         call    CrLf
@@ -36,9 +38,9 @@ Summation:
         adc     eax, [edi]
         pushfd
         mov     [ebx], eax
-        add     esi, 4
-        add     edi, 4
-        add     ebx, 4
+        sub     esi, 4
+        sub     edi, 4
+        sub     ebx, 4
         popfd
         loop    Summation
         mov     DWORD PTR [ebx], 0

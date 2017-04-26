@@ -1,8 +1,8 @@
 INCLUDE Irvine32.inc
 
 .data
-        firstOperand    DWORD   0FFFFFFFFh, 0FFFFFFFFh, 0FFFFFFFFh, 0FFFFFFFFh, 0FFFFFFFFh, 0FFFFFFFFh, 0FFFFFFFFh, 0FFFFFFFFh
-        secondOperand   DWORD   0FFFFFFFFh, 0FFFFFFFFh, 0FFFFFFFFh, 0FFFFFFFFh, 0FFFFFFFFh, 0FFFFFFFFh, 0FFFFFFFFh, 0FFFFFFFFh
+        firstOperand    DWORD   8 DUP(0FFFFFFFFh)
+        secondOperand   DWORD   8 DUP(0FFFFFFFFh)
         sum             DWORD   9 DUP(0)
 
 .code

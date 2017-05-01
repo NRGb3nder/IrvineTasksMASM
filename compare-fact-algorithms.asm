@@ -5,7 +5,7 @@ INCLUDE Irvine32.inc
         repeatTimes = 500000
 
 .data
-        msgFirstTestTime    BYTE    "Recursion algorithm time (mseconds): ", 0
+        msgFirstTestTime    BYTE    "Recoursive algorithm time (mseconds): ", 0
         msgSecondTestTime   BYTE    "Loop algorithm time (mseconds):      ", 0
 
 .code
@@ -16,7 +16,7 @@ main PROC
         mov     ecx, repeatTimes
 LFirstTest:
         push    valueN
-        call    RecursionFactorial
+        call    RecoursiveFactorial
         loop    LFirstTest
         call    GetMseconds
         sub     eax, ebx
@@ -46,7 +46,7 @@ LEnd:
         call    ExitProcess
 main ENDP
 
-RecursionFactorial PROC
+RecoursiveFactorial PROC
         push    ebp
         mov     ebp, esp
         push    ebx
@@ -55,20 +55,20 @@ RecursionFactorial PROC
         or      eax, eax
         ja      LContinueCalculations
         mov     eax, 1
-        jmp     LExitRecursionFactorial
+        jmp     LExitRecoursiveFactorial
 LContinueCalculations:
         dec     eax
         push    eax
-        call    RecursionFactorial
+        call    RecoursiveFactorial
 LReturnFactorial:
         mov     ebx, [ebp + 8]
         mul     ebx
 
-LExitRecursionFactorial:
+LExitRecoursiveFactorial:
         pop     ebx
         pop     ebp
         ret     4
-RecursionFactorial ENDP
+RecoursiveFactorial ENDP
 
 LoopFactorial PROC
         push    ebp

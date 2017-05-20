@@ -66,7 +66,7 @@ LContinueCopy:
 
         popad
         pop     ebp
-        ret     8
+        ret     12
 Str_copyN ENDP
 
 OutputOrigin PROC

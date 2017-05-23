@@ -11,12 +11,12 @@ DumpRegs PROTO
 .code
 
 main PROC
-        xor	    eax, eax
+        xor	eax, eax
         call    DumpRegs    ; ZF = 1
         inc     al
         call    DumpRegs    ; ZF = 0
 
-        xor	    al, al
+        xor	al, al
         call    DumpRegs    ; SF = 0
         add     al, specifiedValue
         call    DumpRegs    ; SF = 1
